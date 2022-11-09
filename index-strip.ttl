@@ -900,9 +900,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObject
-:LogisticsObject rdf:type owl:Class ;
-                 rdfs:comment Logistics Object"@en ;
-                 rdfs:label "LogisticsObject"@en .
+:LogisticsObject rdf:type owl:Class .
+
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef
 :LogisticsObjectRef rdf:type owl:Class ;
