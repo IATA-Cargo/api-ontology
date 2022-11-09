@@ -851,6 +851,10 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:allValuesFrom :PathFilter
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#operations> ;
+                           owl:allValuesFrom :Operation
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
                            owl:allValuesFrom xsd:string
                          ] ;
