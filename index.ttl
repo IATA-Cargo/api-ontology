@@ -880,18 +880,7 @@ xsd:date rdf:type rdfs:Datatype .
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <https://onerecord.iata.org/api/ElementFilter#upperbound> ;
                                  owl:someValuesFrom owl:rational
-                               ]  ;
-
-               rdfs:comment "Filter to limit the pubsub notifications to relevant element changes"@en ;
-               rdfs:label "ElementFilter"@en .
-
-
-###  https://onerecord.iata.org/api/EventFilter
-:EventFilter rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty <https://onerecord.iata.org/api/EventFilter#eventFilterCode> ;
-                               owl:allValuesFrom xsd:string
-                             ] .
+                               ]  .
 
 
 ###  https://onerecord.iata.org/api/Error
@@ -920,6 +909,14 @@ xsd:date rdf:type rdfs:Datatype .
        rdfs:label "Error"@en .
 
 
+###  https://onerecord.iata.org/api/EventFilter
+:EventFilter rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty <https://onerecord.iata.org/api/EventFilter#eventFilterCode> ;
+                               owl:allValuesFrom xsd:string
+                             ] .
+
+
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -936,9 +933,7 @@ xsd:date rdf:type rdfs:Datatype .
                           owl:onProperty <https://onerecord.iata.org/api/
                           Filter#eventFilter> ;
                           owl:allValuesFrom :EventFilter
-                        ] ;
-        rdfs:comment "Filter to limit the pubsub notifications to relevant element changes, events or patch requests"@en ;
-        rdfs:label "Filter"@en .
+                        ] .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObject
