@@ -833,8 +833,8 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementPath> ;
-                           owl:allValuesFrom xsd:string
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
+                           owl:allValuesFrom :PathFilter
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
@@ -857,8 +857,8 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
                            owl:allValuesFrom xsd:string
                          ] ;
-         rdfs:comment "Filter model"@en ;
-         rdfs:label "Filter"@en .
+         rdfs:comment "PathFilter model"@en ;
+         rdfs:label "PathFilter"@en .
 
 ###  https://onerecord.iata.org/api/LogisticsObject
 :LogisticsObject rdf:type owl:Class .
