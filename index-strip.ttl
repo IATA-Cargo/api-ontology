@@ -326,6 +326,13 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:comment "Brief description of the eventFilter"@en ;
                                                rdfs:label "Filter:eventFilter"@en .
 
+###  https://onerecord.iata.org/api/Filter#elementPath
+<https://onerecord.iata.org/api/Filter#elementPath> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Filter ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Brief description of the elementPath"@en ;
+                                               rdfs:label "Filter:elementPath"@en .
+
 ###  https://onerecord.iata.org/api/Filter#changeResponseFilter
 <https://onerecord.iata.org/api/Filter#changeResponseFilter> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
@@ -825,10 +832,28 @@ xsd:date rdf:type rdfs:Datatype .
        rdfs:comment "Error model"@en ;
        rdfs:label "Error"@en .
 
+###  https://onerecord.iata.org/api/ElementFilter
+:ElementFilter rdf:type owl:Class ;
+       rdfs:subClassOf   [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/elementPath> ;
+                           owl:allValuesFrom xsd:string
+                         ] ;
+ 
+       rdfs:comment "ElementFilter model"@en ;
+       rdfs:label "ElementFilter"@en .
+
 
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
+                           owl:allValuesFrom :ElementFilter
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
                            owl:allValuesFrom xsd:string
                          ] ,
