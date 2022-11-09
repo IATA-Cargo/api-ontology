@@ -108,13 +108,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                                           rdfs:label "delegationRequest:targetLogisticsObjects"@en .
 
 
-###  https://onerecord.iata.org/api/Filter#details
-<https://onerecord.iata.org/api/Filter#details> rdf:type owl:ObjectProperty ;
-                                               rdfs:domain :Filter ;
-                                               rdfs:range :Details ;
-                                               rdfs:comment "Filter details"@en ;
-                                               rdfs:label "filter:details"@en .
-
 ###  https://onerecord.iata.org/api/Error#details
 <https://onerecord.iata.org/api/Error#details> rdf:type owl:ObjectProperty ;
                                                rdfs:domain :Error ;
@@ -122,12 +115,22 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:comment "Error details"@en ;
                                                rdfs:label "error:details"@en .
 
+
+###  https://onerecord.iata.org/api/Filter#details
+<https://onerecord.iata.org/api/Filter#details> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain :Filter ;
+                                                rdfs:range :Details ;
+                                                rdfs:comment "Filter details"@en ;
+                                                rdfs:label "filter:details"@en .
+
+
 ###  https://onerecord.iata.org/api/Filter#pathFilter
-<https://onerecord.iata.org/api/Filter#pathFilter>  rdf:type owl:ObjectProperty ;
-                                                    rdfs:domain :Filter ;
-                                                    rdfs:range :PathFilter ;
-                                                    rdfs:comment "PathFilter"@en ;
-                                                    rdfs:label "filter:pathFilter"@en .
+<https://onerecord.iata.org/api/Filter#pathFilter> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain :Filter ;
+                                                   rdfs:range :PathFilter ;
+                                                   rdfs:comment "PathFilter"@en ;
+                                                   rdfs:label "filter:pathFilter"@en .
+
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
 <https://onerecord.iata.org/api/Notification#logisticsObject> rdf:type owl:ObjectProperty ;
@@ -325,40 +328,20 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "error:title"@en .
 
 
-###  https://onerecord.iata.org/api/PathFilter#path
-<https://onerecord.iata.org/api/PathFilter#path> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :PathFilter ;
-                                               rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the path"@en ;
-                                               rdfs:label "pathFilter:path"@en .
+###  https://onerecord.iata.org/api/Filter#changeResponses
+<https://onerecord.iata.org/api/Filter#changeResponses> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain :Filter ;
+                                                        rdfs:range xsd:boolean ;
+                                                        rdfs:comment "Brief description of the changeResponses"@en ;
+                                                        rdfs:label "filter:changeResponses"@en .
 
-###  https://onerecord.iata.org/api/PathFilter#lowerbound
-<https://onerecord.iata.org/api/PathFilter#lowerbound> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :PathFilter ;
-                                               rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the lowerbound"@en ;
-                                               rdfs:label "pathFilter:lowerbound"@en .
-
-###  https://onerecord.iata.org/api/PathFilter#upperbound
-<https://onerecord.iata.org/api/PathFilter#upperbound> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :PathFilter ;
-                                               rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the upperbound"@en ;
-                                               rdfs:label "pathFilter:upperbound"@en .
 
 ###  https://onerecord.iata.org/api/Filter#eventCodes
 <https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :Filter ;
-                                               rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the eventCodes"@en ;
-                                               rdfs:label "filter:eventCodes"@en .
-
-###  https://onerecord.iata.org/api/Filter#changeResponses
-<https://onerecord.iata.org/api/Filter#changeResponses> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :Filter ;
-                                               rdfs:range xsd:boolean ;
-                                               rdfs:comment "Brief description of the changeResponses"@en ;
-                                               rdfs:label "filter:changeResponses"@en .
+                                                   rdfs:domain :Filter ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment "Brief description of the eventCodes"@en ;
+                                                   rdfs:label "filter:eventCodes"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef#logisticsObjectId
@@ -382,16 +365,31 @@ xsd:date rdf:type rdfs:Datatype .
                                                         rdfs:domain :Notification ;
                                                         rdfs:range [ rdf:type rdfs:Datatype ;
                                                                      owl:oneOf [ rdf:type rdf:List ;
-                                                                                 rdf:first "OBJECT_CREATED"^^xsd:string ;
+                                                                                 rdf:first "EVENT_RECEIVED"^^xsd:string ;
                                                                                  rdf:rest [ rdf:type rdf:List ;
-                                                                                            rdf:first "OBJECT_UPDATED"^^xsd:string ;
-                                                                                            rdf:rest rdf:nil
+                                                                                            rdf:first "OBJECT_CREATED"^^xsd:string ;
+                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                       rdf:first "OBJECT_UPDATED"^^xsd:string ;
+                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                  rdf:first "PATCH_ACCEPTED"^^xsd:string ;
+                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                             rdf:first "PATCH_PENDING"^^xsd:string ;
+                                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                        rdf:first "PATCH_REJECTED"^^xsd:string ;
+                                                                                                                                        rdf:rest rdf:nil
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
                                                                                           ]
                                                                                ]
                                                                    ] ;
-                                                        rdfs:comment "OBJECT_CREATED or OBJECT_UPDATED"@en ;
+                                                        rdfs:comment "OBJECT_CREATED, BJECT_UPDATED, EVENET_RECEIVED, PATCH PENDING, PATCH ACCEPTED, PATCH REJECTED"@en ;
                                                         rdfs:label "notification:eventType"@en .
 
+
+###  https://onerecord.iata.org/api/Notification#patchRequest
+<https://onerecord.iata.org/api/Notification#patchRequest> rdf:type owl:DatatypeProperty .
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
 <https://onerecord.iata.org/api/Notification#logisticsObject> rdf:type owl:DatatypeProperty .
@@ -471,6 +469,30 @@ xsd:date rdf:type rdfs:Datatype .
                                                        rdfs:range xsd:string ;
                                                        rdfs:comment "Revision number of the Logistics Object"@en ;
                                                        rdfs:label "patchRequest:revision"@en .
+
+
+###  https://onerecord.iata.org/api/PathFilter#lowerbound
+<https://onerecord.iata.org/api/PathFilter#lowerbound> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain :PathFilter ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:comment "Brief description of the lowerbound"@en ;
+                                                       rdfs:label "pathFilter:lowerbound"@en .
+
+
+###  https://onerecord.iata.org/api/PathFilter#path
+<https://onerecord.iata.org/api/PathFilter#path> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain :PathFilter ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Brief description of the path"@en ;
+                                                 rdfs:label "pathFilter:path"@en .
+
+
+###  https://onerecord.iata.org/api/PathFilter#upperbound
+<https://onerecord.iata.org/api/PathFilter#upperbound> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain :PathFilter ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:comment "Brief description of the upperbound"@en ;
+                                                       rdfs:label "pathFilter:upperbound"@en .
 
 
 ###  https://onerecord.iata.org/api/Subscription#cacheFor
@@ -855,45 +877,21 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#details> ;
-                           owl:allValuesFrom :Details
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
-                           owl:allValuesFrom :PathFilter
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
-                           owl:allValuesFrom xsd:boolean
-                         ] ;
-         rdfs:comment "Filter model"@en ;
-         rdfs:label "Filter"@en .
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
+                          owl:allValuesFrom :PathFilter
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
+                          owl:allValuesFrom xsd:boolean
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
+                          owl:allValuesFrom xsd:string
+                        ] ;
+        rdfs:comment "Filter model"@en ;
+        rdfs:label "Filter"@en .
 
-###  https://onerecord.iata.org/api/PathFilter
-:PathFilter rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#path> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#upperbound> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#lowerbound> ;
-                           owl:allValuesFrom xsd:string
-                         ] ;
-         rdfs:comment "PathFilter model"@en ;
-         rdfs:label "PathFilter"@en .
 
 ###  https://onerecord.iata.org/api/LogisticsObject
 :LogisticsObject rdf:type owl:Class .
@@ -944,6 +942,17 @@ xsd:date rdf:type rdfs:Datatype .
                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#patchRequest> ;
+                                owl:allValuesFrom :PatchRequest
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#patchRequest> ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#patchRequest> ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,                              [ rdf:type owl:Restriction ;
                                 owl:onProperty <https://onerecord.iata.org/api/Notification#eventType> ;
                                 owl:allValuesFrom xsd:string
                               ] ,
@@ -1099,6 +1108,24 @@ xsd:date rdf:type rdfs:Datatype .
                               ] ;
               rdfs:comment "PATCH Request body containing updates on a Logistics Object"@en ;
               rdfs:label "PatchRequest"@en .
+
+
+###  https://onerecord.iata.org/api/PathFilter
+:PathFilter rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://onerecord.iata.org/api/PathFilter#lowerbound> ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://onerecord.iata.org/api/PathFilter#path> ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <https://onerecord.iata.org/api/PathFilter#upperbound> ;
+                              owl:allValuesFrom xsd:string
+                            ] ;
+            rdfs:comment "PathFilter model"@en ;
+            rdfs:label "PathFilter"@en .
 
 
 ###  https://onerecord.iata.org/api/Subscription
