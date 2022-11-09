@@ -116,12 +116,12 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:label "error:details"@en .
 
 
-###  https://onerecord.iata.org/api/Errorxx#details
-<https://onerecord.iata.org/api/Errorxx#details> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain :Errorxx ;
+###  https://onerecord.iata.org/api/Filter#eventFilter
+<https://onerecord.iata.org/api/Filter#eventFilter> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain :Filter ;
                                                  rdfs:range :Details ;
-                                                 rdfs:comment "Errorxx details"@en ;
-                                                 rdfs:label "errorxx:details"@en .
+                                                 rdfs:comment "Filter eventFilter"@en ;
+                                                 rdfs:label "Filter:eventFilter"@en .
 
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
@@ -320,12 +320,12 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "error:title"@en .
 
 
-###  https://onerecord.iata.org/api/Errorxx#title
-<https://onerecord.iata.org/api/Errorxx#title> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :Errorxx ;
+###  https://onerecord.iata.org/api/Filter#elementFilter
+<https://onerecord.iata.org/api/Filter#elementFilter> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Filter ;
                                                rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the errorxx"@en ;
-                                               rdfs:label "errorxx:title"@en .
+                                               rdfs:comment "Brief description of the Filter"@en ;
+                                               rdfs:label "Filter:elementFilter"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef#logisticsObjectId
@@ -820,30 +820,30 @@ xsd:date rdf:type rdfs:Datatype .
        rdfs:label "Error"@en .
 
 
-###  https://onerecord.iata.org/api/Errorxx
-:Errorxx rdf:type owl:Class ;
+###  https://onerecord.iata.org/api/Filter
+:Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#details> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
                            owl:allValuesFrom :Details
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#details> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
-         rdfs:comment "Errorxx model"@en ;
-         rdfs:label "Errorxx"@en .
+         rdfs:comment "Filter model"@en ;
+         rdfs:label "Filter"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObject
