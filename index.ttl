@@ -937,8 +937,8 @@ xsd:date rdf:type rdfs:Datatype .
                           Filter#eventFilter> ;
                           owl:allValuesFrom :EventFilter
                         ] ;
-               rdfs:comment "Filter to limit the pubsub notifications to relevant element changes, events or patch requests"@en ;
-               rdfs:label "Filter"@en .
+        rdfs:comment "Filter to limit the pubsub notifications to relevant element changes, events or patch requests"@en ;
+        rdfs:label "Filter"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObject
