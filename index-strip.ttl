@@ -312,26 +312,26 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "error:title"@en .
 
 
-###  https://onerecord.iata.org/api/Filter#elementFilter
-<https://onerecord.iata.org/api/Filter#elementFilter> rdf:type owl:DatatypeProperty ;
+###  https://onerecord.iata.org/api/Filter#elementPath
+<https://onerecord.iata.org/api/Filter#elementPath> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
                                                rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the elementFilter"@en ;
-                                               rdfs:label "Filter:elementFilter"@en .
+                                               rdfs:comment "Brief description of the elementPath"@en ;
+                                               rdfs:label "Filter:elementPath"@en .
 
-###  https://onerecord.iata.org/api/Filter#eventFilter
-<https://onerecord.iata.org/api/Filter#eventFilter> rdf:type owl:DatatypeProperty ;
+###  https://onerecord.iata.org/api/Filter#eventCodes
+<https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
                                                rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the eventFilter"@en ;
-                                               rdfs:label "Filter:eventFilter"@en .
+                                               rdfs:comment "Brief description of the eventCodes"@en ;
+                                               rdfs:label "Filter:eventCodes"@en .
 
-###  https://onerecord.iata.org/api/Filter#changeResponseFilter
-<https://onerecord.iata.org/api/Filter#changeResponseFilter> rdf:type owl:DatatypeProperty ;
+###  https://onerecord.iata.org/api/Filter#changeResponses
+<https://onerecord.iata.org/api/Filter#changeResponses> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
-                                               rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the changeResponseFilter"@en ;
-                                               rdfs:label "Filter:changeResponseFilter"@en .
+                                               rdfs:range xsd:boolean ;
+                                               rdfs:comment "Brief description of the changeResponses"@en ;
+                                               rdfs:label "Filter:changeResponses"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef#logisticsObjectId
@@ -829,36 +829,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementPath> ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
                            owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
          rdfs:comment "Filter model"@en ;
          rdfs:label "Filter"@en .
