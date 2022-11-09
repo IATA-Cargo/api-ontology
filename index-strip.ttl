@@ -835,10 +835,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/ElementFilter
 :ElementFilter rdf:type owl:Class ;
        rdfs:subClassOf   [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/elementPath> ;
+                           owl:onProperty <https://onerecord.iata.org/api/ElementFilter#elementPath> ;
                            owl:allValuesFrom xsd:string
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementPath> ;
+                           owl:onProperty <https://onerecord.iata.org/api/ElementFilter#elementPath> ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger 
                          ] ;
  
