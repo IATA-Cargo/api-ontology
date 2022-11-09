@@ -326,9 +326,9 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:comment "Brief description of the eventFilter"@en ;
                                                rdfs:label "Filter:eventFilter"@en .
 
-###  https://onerecord.iata.org/api/Filter#elementPath
-<https://onerecord.iata.org/api/Filter#elementPath> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :Filter ;
+###  https://onerecord.iata.org/api/ElementFilter#elementPath
+<https://onerecord.iata.org/api/ElementFilter#elementPath> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :ElementFilter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the elementPath"@en ;
                                                rdfs:label "Filter:elementPath"@en .
