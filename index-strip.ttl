@@ -319,6 +319,20 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:comment "Brief description of the path"@en ;
                                                rdfs:label "PathFilter:path"@en .
 
+###  https://onerecord.iata.org/api/PathFilter#lowerbound
+<https://onerecord.iata.org/api/PathFilter#lowerbound> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :PathFilter ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Brief description of the lowerbound"@en ;
+                                               rdfs:label "PathFilter:lowerbound"@en .
+
+###  https://onerecord.iata.org/api/PathFilter#upperbound
+<https://onerecord.iata.org/api/PathFilter#upperbound> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :PathFilter ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Brief description of the upperbound"@en ;
+                                               rdfs:label "PathFilter:upperbound"@en .
+
 ###  https://onerecord.iata.org/api/Filter#eventCodes
 <https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
@@ -833,7 +847,8 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/
+                           Filter#pathFilter> ;
                            owl:allValuesFrom :PathFilter
                          ] ,
                          [ rdf:type owl:Restriction ;
@@ -847,6 +862,14 @@ xsd:date rdf:type rdfs:Datatype .
 :PathFilter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/PathFilter#path> ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#upperbound> ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#lowerbound> ;
                            owl:allValuesFrom xsd:string
                          ] ;
          rdfs:comment "PathFilter model"@en ;
