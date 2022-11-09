@@ -127,7 +127,7 @@ xsd:date rdf:type rdfs:Datatype .
                                                     rdfs:domain :Filter ;
                                                     rdfs:range :PathFilter ;
                                                     rdfs:comment "PathFilter"@en ;
-                                                    rdfs:label "PathFilter"@en .
+                                                    rdfs:label "filter:pathFilter"@en .
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
 <https://onerecord.iata.org/api/Notification#logisticsObject> rdf:type owl:ObjectProperty ;
@@ -330,35 +330,35 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:domain :PathFilter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the path"@en ;
-                                               rdfs:label "PathFilter:path"@en .
+                                               rdfs:label "pathFilter:path"@en .
 
 ###  https://onerecord.iata.org/api/PathFilter#lowerbound
 <https://onerecord.iata.org/api/PathFilter#lowerbound> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :PathFilter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the lowerbound"@en ;
-                                               rdfs:label "PathFilter:lowerbound"@en .
+                                               rdfs:label "pathFilter:lowerbound"@en .
 
 ###  https://onerecord.iata.org/api/PathFilter#upperbound
 <https://onerecord.iata.org/api/PathFilter#upperbound> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :PathFilter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the upperbound"@en ;
-                                               rdfs:label "PathFilter:upperbound"@en .
+                                               rdfs:label "pathFilter:upperbound"@en .
 
 ###  https://onerecord.iata.org/api/Filter#eventCodes
 <https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the eventCodes"@en ;
-                                               rdfs:label "Filter:eventCodes"@en .
+                                               rdfs:label "filter:eventCodes"@en .
 
 ###  https://onerecord.iata.org/api/Filter#changeResponses
 <https://onerecord.iata.org/api/Filter#changeResponses> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :Filter ;
                                                rdfs:range xsd:boolean ;
                                                rdfs:comment "Brief description of the changeResponses"@en ;
-                                               rdfs:label "Filter:changeResponses"@en .
+                                               rdfs:label "filter:changeResponses"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef#logisticsObjectId
