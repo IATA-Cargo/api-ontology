@@ -843,16 +843,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
                            owl:allValuesFrom :PathFilter
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#operations> ;
-                           owl:allValuesFrom :Operation
+                           owl:allValuesFrom :Details
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
+                           owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
