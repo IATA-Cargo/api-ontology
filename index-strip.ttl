@@ -312,12 +312,12 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "error:title"@en .
 
 
-###  https://onerecord.iata.org/api/PathFilter#elementPath
-<https://onerecord.iata.org/api/PathFilter#elementPath> rdf:type owl:DatatypeProperty ;
+###  https://onerecord.iata.org/api/PathFilter#path
+<https://onerecord.iata.org/api/PathFilter#path> rdf:type owl:DatatypeProperty ;
                                                rdfs:domain :PathFilter ;
                                                rdfs:range xsd:string ;
-                                               rdfs:comment "Brief description of the elementPath"@en ;
-                                               rdfs:label "PathFilter:elementPath"@en .
+                                               rdfs:comment "Brief description of the path"@en ;
+                                               rdfs:label "PathFilter:path"@en .
 
 ###  https://onerecord.iata.org/api/Filter#eventCodes
 <https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
@@ -846,15 +846,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/PathFilter
 :PathFilter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#elementPath> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
+                           owl:onProperty <https://onerecord.iata.org/api/PathFilter#path> ;
                            owl:allValuesFrom xsd:string
                          ] ;
          rdfs:comment "PathFilter model"@en ;
