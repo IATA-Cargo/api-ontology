@@ -9,7 +9,7 @@
 <https://onerecord.iata.org/api/> rdf:type owl:Ontology ;
                                    <http://purl.org/dc/elements/1.1/description> "The IATA ONE Record vocabulary, described using W3C RDF Schema and the Web Ontology Language."@en ;
                                    <http://purl.org/dc/elements/1.1/title> "IATA ONE Record API vocabulary"@en ;
-                                   owl:versionInfo "1.1"^^xsd:string .
+                                   owl:versionInfo "2.0 draft"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -108,7 +108,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                                           rdfs:label "delegationRequest:targetLogisticsObjects"@en .
 
 
-
 ###  https://onerecord.iata.org/api/Error#details
 <https://onerecord.iata.org/api/Error#details> rdf:type owl:ObjectProperty ;
                                                rdfs:domain :Error ;
@@ -117,21 +116,12 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:label "error:details"@en .
 
 
-###  https://onerecord.iata.org/api/Memento#data
-<https://onerecord.iata.org/api/Memento#data> rdf:type owl:ObjectProperty ;
-                                              rdfs:range :LogisticsObject .
-
-
-###  https://onerecord.iata.org/api/MementoList#mementoEntry
-<https://onerecord.iata.org/api/MementoList#mementoEntry> rdf:type owl:ObjectProperty ;
-                                                          rdfs:comment "List of mementos of a Logistics Object"@en ;
-                                                          rdfs:label "mementoList:mementoEntry"@en .
-
-
-###  https://onerecord.iata.org/api/Mementos#list
-<https://onerecord.iata.org/api/Mementos#list> rdf:type owl:ObjectProperty ;
-                                               rdfs:comment "List of mementos of a Logistics Object"@en ;
-                                               rdfs:label "mementos:list"@en .
+###  https://onerecord.iata.org/api/Errorxx#details
+<https://onerecord.iata.org/api/Errorxx#details> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain :Errorxx ;
+                                                 rdfs:range :Details ;
+                                                 rdfs:comment "Errorxx details"@en ;
+                                                 rdfs:label "errorxx:details"@en .
 
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
@@ -168,12 +158,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                      rdfs:range :Error ;
                                                      rdfs:comment "Non mandatory error details"@en ;
                                                      rdfs:label "subscription:errors"@en .
-
-
-###  https://onerecord.iata.org/api/Timemap#mementos
-<https://onerecord.iata.org/api/Timemap#mementos> rdf:type owl:ObjectProperty ;
-                                                  rdfs:comment "List of mementos of a Logistics Object"@en ;
-                                                  rdfs:label "timemap:mementos"@en .
 
 
 #################################################################
@@ -222,7 +206,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                           rdfs:range xsd:dateTime ;
                                                           rdfs:comment "Timestamp of the change request"@en ;
                                                           rdfs:label "changeResponse:timestamp"@en .
-
 
 
 ###  https://onerecord.iata.org/api/CompanyInformation#companyId
@@ -336,6 +319,13 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:comment "Brief description of the error"@en ;
                                              rdfs:label "error:title"@en .
 
+
+###  https://onerecord.iata.org/api/Errorxx#title
+<https://onerecord.iata.org/api/Errorxx#title> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Errorxx ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Brief description of the errorxx"@en ;
+                                               rdfs:label "errorxx:title"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObjectRef#logisticsObjectId
@@ -526,10 +516,6 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://org.semanticweb.owlapi/error#Error3
-<http://org.semanticweb.owlapi/error#Error3> rdf:type owl:Class .
-
-
 ###  https://onerecord.iata.org/Branch
 <https://onerecord.iata.org/Branch> rdf:type owl:Class .
 
@@ -656,7 +642,6 @@ xsd:date rdf:type rdfs:Datatype .
                                 ] ;
                 rdfs:comment "Change Request for the audit trail"@en ;
                 rdfs:label "ChangeResponse"@en .
-
 
 
 ###  https://onerecord.iata.org/api/Company
@@ -809,7 +794,6 @@ xsd:date rdf:type rdfs:Datatype .
          rdfs:label "Details"@en .
 
 
-
 ###  https://onerecord.iata.org/api/Error
 :Error rdf:type owl:Class ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -834,6 +818,32 @@ xsd:date rdf:type rdfs:Datatype .
                        ] ;
        rdfs:comment "Error model"@en ;
        rdfs:label "Error"@en .
+
+
+###  https://onerecord.iata.org/api/Errorxx
+:Errorxx rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#details> ;
+                           owl:allValuesFrom :Details
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#details> ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:allValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Errorxx#title> ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "Errorxx model"@en ;
+         rdfs:label "Errorxx"@en .
 
 
 ###  https://onerecord.iata.org/api/LogisticsObject
