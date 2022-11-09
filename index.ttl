@@ -1232,7 +1232,7 @@ xsd:date rdf:type rdfs:Datatype .
                                 owl:onProperty <https://onerecord.iata.org/api/Subscription#topic> ;
                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ;
-              rdfs:comment "Subscription information sent to the publisher"@en ;
+              rdfs:comment "Subscription  information sent to the publisher"@en ;
               rdfs:label "Subscription"@en .
 
 
