@@ -816,7 +816,7 @@ xsd:date rdf:type rdfs:Datatype .
 :Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
-                           owl:allValuesFrom :Details
+                           owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
