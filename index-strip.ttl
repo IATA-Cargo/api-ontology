@@ -135,8 +135,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
 <https://onerecord.iata.org/api/Notification#logisticsObject> rdf:type owl:ObjectProperty ;
                                                               rdfs:domain :Notification ;
-                                                              rdfs:range :LogisticsObject ;
-                                                              rdfs:label "notification#logisticsObject"@en .
+                                                              rdfs:range :LogisticsObject .
 
 ###  https://onerecord.iata.org/api/Notification#patchRequest
 <https://onerecord.iata.org/api/Notification#patchRequest> rdf:type owl:ObjectProperty ;
