@@ -837,6 +837,9 @@ xsd:date rdf:type rdfs:Datatype .
        rdfs:subClassOf   [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/elementPath> ;
                            owl:allValuesFrom xsd:string
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementPath> ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger 
                          ] ;
  
        rdfs:comment "ElementFilter model"@en ;
@@ -860,18 +863,6 @@ xsd:date rdf:type rdfs:Datatype .
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#eventFilter> ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
-                           owl:allValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#elementFilter> ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
