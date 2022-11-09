@@ -153,6 +153,12 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "operation:o"@en .
 
 
+###  https://onerecord.iata.org/api/Notification#logisticsObjectRef
+<https://onerecord.iata.org/api/Notification#logisticsObjectRef> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain :Notification ;
+                                                                 rdfs:range :LogisticsObjectRef .
+
+
 ###  https://onerecord.iata.org/api/PatchRequest#logisticsObjectRef
 <https://onerecord.iata.org/api/PatchRequest#logisticsObjectRef> rdf:type owl:ObjectProperty ;
                                                                  rdfs:domain :PatchRequest ;
@@ -460,6 +466,9 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://onerecord.iata.org/api/PatchRequest#logisticsObjectRef
 <https://onerecord.iata.org/api/PatchRequest#logisticsObjectRef> rdf:type owl:DatatypeProperty .
+
+###  https://onerecord.iata.org/api/Notification#logisticsObjectRef
+<https://onerecord.iata.org/api/Notification#logisticsObjectRef> rdf:type owl:DatatypeProperty .
 
 
 ###  https://onerecord.iata.org/api/PatchRequest#requestorCompanyIdentifier
@@ -938,15 +947,15 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/Notification
 :Notification rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObject> ;
-                                owl:allValuesFrom :LogisticsObject
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObjectRef> ;
+                                owl:allValuesFrom :LogisticsObjectRef
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObject> ;
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObjectRef> ;
                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObject> ;
+                                owl:onProperty <https://onerecord.iata.org/api/Notification#logisticsObjectRef> ;
                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
                               ] ,
                               [ rdf:type owl:Restriction ;
