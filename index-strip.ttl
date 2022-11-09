@@ -312,12 +312,12 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:label "error:title"@en .
 
 
-###  https://onerecord.iata.org/api/Filter#elementPath
-<https://onerecord.iata.org/api/Filter#elementPath> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain :Filter ;
+###  https://onerecord.iata.org/api/PathFilter#elementPath
+<https://onerecord.iata.org/api/PathFilter#elementPath> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :PathFilter ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "Brief description of the elementPath"@en ;
-                                               rdfs:label "Filter:elementPath"@en .
+                                               rdfs:label "PathFilter:elementPath"@en .
 
 ###  https://onerecord.iata.org/api/Filter#eventCodes
 <https://onerecord.iata.org/api/Filter#eventCodes> rdf:type owl:DatatypeProperty ;
