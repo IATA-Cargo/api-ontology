@@ -119,7 +119,7 @@ xsd:date rdf:type rdfs:Datatype .
 <https://onerecord.iata.org/api/Filter#pathFilter>  rdf:type owl:ObjectProperty ;
                                                     rdfs:domain :Filter ;
                                                     rdfs:range :PathFilter ;
-                                                    rdfs:comment "Error details"@en ;
+                                                    rdfs:comment "PathFilter"@en ;
                                                     rdfs:label "PathFilter"@en .
 
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
@@ -853,12 +853,16 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:allValuesFrom :PathFilter
                          ] ,
                          [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#eventCodes> ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponses> ;
-                           owl:allValuesFrom xsd:string
+                           owl:allValuesFrom xsd:boolean
                          ] ;
          rdfs:comment "Filter model"@en ;
          rdfs:label "Filter"@en .
