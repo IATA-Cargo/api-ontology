@@ -849,15 +849,15 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeReponseFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
                            owl:allValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeReponseFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeReponseFilter> ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#changeResponseFilter> ;
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
          rdfs:comment "Filter model"@en ;
