@@ -116,14 +116,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:label "error:details"@en .
 
 
-###  https://onerecord.iata.org/api/Filter#eventFilter
-<https://onerecord.iata.org/api/Filter#eventFilter> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain :Filter ;
-                                                 rdfs:range :Details ;
-                                                 rdfs:comment "Filter eventFilter"@en ;
-                                                 rdfs:label "Filter:eventFilter"@en .
-
-
 ###  https://onerecord.iata.org/api/Notification#logisticsObject
 <https://onerecord.iata.org/api/Notification#logisticsObject> rdf:type owl:ObjectProperty ;
                                                               rdfs:domain :Notification ;
