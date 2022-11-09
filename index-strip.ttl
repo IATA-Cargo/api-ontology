@@ -108,6 +108,13 @@ xsd:date rdf:type rdfs:Datatype .
                                                                           rdfs:label "delegationRequest:targetLogisticsObjects"@en .
 
 
+###  https://onerecord.iata.org/api/Filter#details
+<https://onerecord.iata.org/api/Filter#details> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain :Filter ;
+                                               rdfs:range :Details ;
+                                               rdfs:comment "Filter details"@en ;
+                                               rdfs:label "filter:details"@en .
+
 ###  https://onerecord.iata.org/api/Error#details
 <https://onerecord.iata.org/api/Error#details> rdf:type owl:ObjectProperty ;
                                                rdfs:domain :Error ;
@@ -849,6 +856,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://onerecord.iata.org/api/Filter
 :Filter rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://onerecord.iata.org/api/Filter#details> ;
+                           owl:allValuesFrom :Details
+                         ] ,
+                         [ rdf:type owl:Restriction ;
                            owl:onProperty <https://onerecord.iata.org/api/Filter#pathFilter> ;
                            owl:allValuesFrom :PathFilter
                          ] ,
